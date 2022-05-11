@@ -17,8 +17,7 @@ public class Client {
              BufferedReader in = new BufferedReader(new
                      InputStreamReader(clientSocket.getInputStream()))) {
 
-            String serverMessage1 = in.readLine();
-            System.out.println(serverMessage1);
+            System.out.println(in.readLine());
 
             String word = scanner.nextLine();
             out.println(word);

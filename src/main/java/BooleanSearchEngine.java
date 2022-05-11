@@ -15,19 +15,18 @@ public class BooleanSearchEngine implements SearchEngine {
     public BooleanSearchEngine(File pdfsDir) throws IOException {
         this.pdfsDir = pdfsDir;
 
-        for (File file : pdfsDir.listFiles()) { //проходим по всем файлам
+        for (File file : pdfsDir.listFiles()) {
 
-            var doc = new PdfDocument(new PdfReader(file));//создали объект пдф-документа
-            int numberOfPages = doc.getNumberOfPages();//кол-во страниц в документе
+            var doc = new PdfDocument(new PdfReader(file));
+            int numberOfPages = doc.getNumberOfPages();
 
-            for (int i = 1; i <= numberOfPages; i++) {//проходим по всем страницам
+            for (int i = 1; i <= numberOfPages; i++) {
 
-                PdfPage page = doc.getPage(i);//получаем объект страницы
-                String text = PdfTextExtractor.getTextFromPage(page);//получаем текст со страницы
-                // var words = text.split("\\P{IsAlphabetic}+");
-                String[] words = text.split("\\P{IsAlphabetic}+");//получаем массив слов страницы
+                PdfPage page = doc.getPage(i);
+                String text = PdfTextExtractor.getTextFromPage(page);
+                String[] words = text.split("\\P{IsAlphabetic}+");
 
-                Map<String, Integer> freqs = new HashMap<>();//создаем мапу: слово-количество
+                Map<String, Integer> freqs = new HashMap<>();
                 for (String word : words) {//
                     if (word.isEmpty()) {
                         continue;
