@@ -46,7 +46,6 @@ public class BooleanSearchEngine implements SearchEngine {
                 }
             }
         }
-        System.out.println("Количество слов в исходных документах: " + wordList.size());
     }
 
     @Override

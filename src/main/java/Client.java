@@ -20,6 +20,7 @@ public class Client {
             System.out.println(in.readLine());
 
             String word = scanner.nextLine();
+            System.out.println("Было ведено слово: " + word);
             out.println(word);
 
             System.out.println(in.readLine());

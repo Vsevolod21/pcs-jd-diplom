@@ -30,7 +30,6 @@ public class Main {
                 out.println("Введите слово для поиска");
                 out.flush();
                 String word = in.readLine();
-                System.out.println("Было ведено слово: " + word);
 
                 List<PageEntry> list = engine.search(word);
                 Collections.sort(list);
