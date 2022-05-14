@@ -11,7 +11,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        String pathName = "C:\\dev\\projects\\diplom\\pcs-jd-diplom\\pdfs";
+//        String pathName = "C:\\dev\\projects\\diplom\\pcs-jd-diplom\\pdfs";
+        String pathName = "pdfs";
+
         BooleanSearchEngine engine = new BooleanSearchEngine(new File(pathName));
 
         int port = 8989;
