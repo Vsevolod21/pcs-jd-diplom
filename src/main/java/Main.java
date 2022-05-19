@@ -33,7 +33,7 @@ public class Main {
                 String word = in.readLine();
 
                 List<PageEntry> list = engine.search(word);
-                Collections.sort(list);
+//                Collections.sort(list);
                 GsonBuilder builder = new GsonBuilder();
                 builder.setPrettyPrinting();
                 Gson gson = builder.create();

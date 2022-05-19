@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Client {
@@ -19,7 +20,8 @@ public class Client {
 
             System.out.println(in.readLine());
 
-            String word = scanner.nextLine();
+            String wordInput = scanner.nextLine();
+            String word = wordInput.toLowerCase();
             System.out.println("Было ведено слово: " + word);
             out.println(word);
 

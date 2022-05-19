@@ -9,8 +9,8 @@ import java.util.*;
 
 public class BooleanSearchEngine implements SearchEngine {
 
-    Map<String, List<PageEntry>> wordList = new HashMap<>();
-    File pdfsDir;
+    private Map<String, List<PageEntry>> wordList = new HashMap<>();
+    private File pdfsDir;
 
     public BooleanSearchEngine(File pdfsDir) throws IOException {
         this.pdfsDir = pdfsDir;
@@ -42,6 +42,7 @@ public class BooleanSearchEngine implements SearchEngine {
                     }
                     PageEntry pageEntry = new PageEntry(file.getName(), i, kv.getValue());
                     pageEntryList.add(pageEntry);
+                    Collections.sort(pageEntryList);
                     wordList.put(kv.getKey(), pageEntryList);
                 }
             }
